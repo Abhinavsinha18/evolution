@@ -9,6 +9,9 @@ const { authenticate } = require('./Middleware/middle');
 const app = express();
 
 app.use(express.json());
+app.get('/', (req,res)=>{
+    res.send("welcome user");
+})
 app.use(cors())
 app.use("/user", userRoute);
 app.use(authenticate);
